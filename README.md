@@ -77,7 +77,7 @@ bundle config set path 'vendor/bundle'
 bundle config set without 'development test'
 ```
 2: Install Dependencies with the  Bundler but it will exit in the first depenency that curation blocks:
-``
+```
 bundle install --retry=1
 ```
 
