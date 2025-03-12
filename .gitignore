@@ -12,3 +12,7 @@ coverage
 .tags
 /.vagrant
 /vendor/ruby
+vendor/
+scripts/.env
+scripts/downloaded_gems/
+scripts/dependency_tree.json

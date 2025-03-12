@@ -1,10 +1,12 @@
 # frozen_string_literal: true
-source "https://rubygems.org"
+#source "https://rubygems.org"
+source "https://#{ENV['MYUSER']}:#{ENV['MY_ACCESS_TOKEN']}@#{ENV['MYSERVER']}/artifactory/api/gems/cg-lab-ruby-gems-remote/"
+
 
 #don't upgrade
 gem "rails", "6.0.0"
 
-ruby "2.6.5"
+ruby "3.4.2"
 
 gem "aruba"
 gem "bcrypt"
