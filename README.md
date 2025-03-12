@@ -47,7 +47,7 @@ Also in Gemfile set :
 ruby "3.4.2"
 ``` 
 
-You can generate the Gemfile.lock using:
+You can regenerate the Gemfile.lock wiht the new "remote" , "RUBY VERSION" and  "BUNDLED WITH":
 ```
 bundle lock
 or
