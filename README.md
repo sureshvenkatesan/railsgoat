@@ -1,6 +1,6 @@
-As per the original [README](README-original.md) :
-## Getting Started
 
+## Getting Started with JFrog Curation for Ruby 
+As per the original [README](README-original.md) :
 To begin, if you do not have Ruby  we suggest
 using this [site](https://gorails.com/setup) to install the software.
 Pick the appropriate operating system and follow the instructions.
@@ -59,12 +59,12 @@ Now you can generate the "scripts/dependency_tree.json" from the Gemfile.lock us
 ruby scripts/parse_gemfile_lock.rb
 ```
 
-Resolve the dependencies via JFrog curation using HTTP HEAD request:
+Resolve the dependencies via JFrog Curation enabled Repository using HTTP HEAD request:
 ```
 ruby scripts/parse_gemfile_lock_curation_audit_HEAD_req.rb "https://$MYSERVER/artifactory/api/gems/cg-lab-ruby-gems-remote/gems" "$MY_ACCESS_TOKEN"
 ```
 
-Download the dependencies via JFrog curation using HTTP GET request to the "scripts/downloaded_gems" folder:
+Download the dependencies via JFrog Curation enabled Repository using HTTP GET request to the "scripts/downloaded_gems" folder:
 ```
 ruby scripts/parse_gemfile_lock_curation_audit_DOWNLOAD_req.rb "https://$MYSERVER/artifactory/api/gems/cg-lab-ruby-gems-remote/gems" "$MY_ACCESS_TOKEN"
 ```
@@ -76,7 +76,7 @@ Configure bundler and Install Dependencies:
 bundle config set path 'vendor/bundle'
 bundle config set without 'development test'
 ```
-2: Install Dependencies with the  Bundler but it will exit in the first depenency that curation blocks:
+2: Install Dependencies with the  Bundler but it will exit in the first dependency that Curation blocks:
 ```
 bundle install --retry=1
 ```
