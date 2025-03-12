@@ -69,8 +69,9 @@ Download the dependencies via JFrog curation using HTTP GET request to the "scri
 ruby scripts/parse_gemfile_lock_curation_audit_DOWNLOAD_req.rb "https://$MYSERVER/artifactory/api/gems/cg-lab-ruby-gems-remote/gems" "$MY_ACCESS_TOKEN"
 ```
 
-Update bundler 
-1: Update Bundler
+Configure bundler and Install Dependencies:
+
+1: Configure Bundler
 ```
 bundle config set path 'vendor/bundle'
 bundle config set without 'development test'
