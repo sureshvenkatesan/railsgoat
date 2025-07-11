@@ -23,7 +23,7 @@ So installed using:
 
 ```
 brew install ruby
-echo 'export PATH="/usr/local/Cellar/ruby/3.4.2/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 gem install bundler
 ```

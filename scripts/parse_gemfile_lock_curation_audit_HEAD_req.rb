@@ -44,7 +44,7 @@ def check_artifactory(gem_name, gem_version)
   gem_url = "#{ARTIFACTORY_BASE_URL}/#{gem_filename}"
   uri = URI.parse(gem_url)
 
-  request = Net::HTTP::Get.new(uri)
+  request = Net::HTTP::Head.new(uri)
   request['Authorization'] = "Bearer #{ACCESS_TOKEN}"
 
   http = Net::HTTP.new(uri.host, uri.port)
@@ -58,12 +58,10 @@ def check_artifactory(gem_name, gem_version)
       puts "#{gem_name} #{gem_version} ✅ Available in Artifactory"
     when 403
       puts "#{gem_name} #{gem_version} ❌ Blocked (403 Forbidden)"
-      puts "Error Message: #{response.body}" unless response.body.strip.empty?
     when 404
       puts "#{gem_name} #{gem_version} ❌ Not Found (404)"
     else
       puts "#{gem_name} #{gem_version} ⚠️ Unexpected Response: #{response.code}"
-      puts "Error Message: #{response.body}" unless response.body.strip.empty?
     end
 
   rescue StandardError => e
